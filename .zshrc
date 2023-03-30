@@ -1,15 +1,4 @@
 ### Aliases
-#alias dir='dir --color=auto'
-#alias vdir='vdir --color=auto'
-# alias cdd="source /opt/zsrc/cdd.sh"
-# alias tmp="source /opt/zsrc/tmp"
-
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias diff='diff --color=auto'
-alias ip='ip --color=auto'
 alias urls="/opt/zsrc/urls"
 alias reload="source ~/.zshrc"
 alias thm="source /opt/zsrc/thm.sh"
@@ -27,7 +16,12 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias lsort="awk '{ print length, \$0 }' | sort -n -s "
 alias free='free -m'  # show sizes in MB
-
+alias ports='sudo lsof -iTCP -sTCP:LISTEN -n -P'
+alias findf='fzf --height 50% --border --color 16'
+alias apti='apt info'
+alias apts='apt search'
+alias df='df -hT'
+alias vpn="ls /home/kali/vpn/ | grep -E '\.ovpn' | sed 's/.ovpn//g' | fzf --height 25% --border double --ansi --tac --border-label='select vpn to connect' --color='bg:237,bg+:236,info:143,border:240,spinner:108' | xargs -I {} sudo openvpn /home/kali/vpn/{}.ovpn; sudo killall openvpn #"
 
 
 # confirm before overwriting something
@@ -42,9 +36,6 @@ alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias psmem='ps auxf | sort -nr -k 4'
 alias pscpu='ps auxf | sort -nr -k 3'
-
-
-
 
 
 
